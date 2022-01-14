@@ -17,9 +17,6 @@ var input = 'frank ocean';
     () => Array.from(document.querySelectorAll('img.rg_i')).slice(0,5).map(i => i.src)
   );
   var firstImage = images[1];
-  // var buffer = Buffer.from(firstImage, "base64");
-  // fs.writeFileSync("new-path.jpg", buffer);
-  console.log(firstImage)
-
+  console.log(firstImage);
   await browser.close();
 })();
