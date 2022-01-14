@@ -23,7 +23,7 @@ var getColors = async (input) => {
   }
 
   //colorCount can be 2-20
-  var getPalette = async (img, colorCount = 10, quality = 10) => {
+  var getColor = async (img, colorCount = 5, quality = 10) => {
   try {
     const pixels = await new Promise((res, rej) => {
       getPixels(img, (err, data) => {err ? rej(err) : res(data)})
@@ -32,7 +32,7 @@ var getColors = async (input) => {
     const pixelArray = createPixelArray(pixels.data, pixelCount, quality);
 
     const cmap = quantize(pixelArray, colorCount);
-    return cmap ? cmap.palette() : null;
+    return cmap ? cmap.palette()[0] : null;
   } catch (error) {
     console.log(error)
   }
@@ -61,14 +61,19 @@ var getColors = async (input) => {
     var images = await page.evaluate(
       () => Array.from(document.querySelectorAll('img.rg_i')).slice(0,5).map(i => i.src)
     );
-    var firstImage = images[1];
+    var fiveImages = images.slice(0,5);
     await browser.close();
     // var end = performance.now();
-    return firstImage;
+    return fiveImages;
   }
 
-  var firstImage = await scrapeGoogle(input)
-  return getPalette(firstImage)
+  var fiveImages = await scrapeGoogle(input)
+
+  var colors = [];
+  for (var image of fiveImages) {
+    colors.push(await getColor(image))
+  }
+  return colors;
 }
 
 module.exports = getColors;
