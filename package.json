@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "get-pixels": "^3.3.3",
     "perf_hooks": "0.0.1",
-    "puppeteer": "^13.0.1"
+    "puppeteer": "^13.0.1",
+    "quantize": "^1.0.2"
   }
 }
