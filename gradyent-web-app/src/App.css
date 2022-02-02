@@ -9,18 +9,34 @@
 
 .App {
   text-align: center;
+<<<<<<< HEAD
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
   height: 100vh;
+=======
+  background: black;
+	height: 100vh;
+>>>>>>> 28474ff9bed658d421268f5cbf4e3f8f22386317
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+<<<<<<< HEAD
 .Header {
   font-family: "Josefin Sans", sans-serif;
   color: white;
+=======
+.Header{
+  font-family: 'Josefin Sans', sans-serif;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  animation: gradient 10s ease infinite;
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  color: transparent;
+	background-clip: text;
+>>>>>>> 28474ff9bed658d421268f5cbf4e3f8f22386317
   opacity: 0.9;
   font-size: 3vw;
   margin: 20px;
