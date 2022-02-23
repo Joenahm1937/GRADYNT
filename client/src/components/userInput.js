@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
+import rgbHex from 'rgb-hex';
 
-function UserInput() {
+function UserInput({ setBackground, setIsLoading }) {
   const [searchWord, setSearchWord] = useState("");
   const submitValue = (event) => {
     if (event.keyCode === 13) {
+      setIsLoading(true)
       const searchDetails = searchWord;
-      axios
-        .post("/api/palette", { searchDetails })
-        .then((res) => console.log(res));
+      axios.post("/api/palette", { searchDetails }).then((res) => {
+        const colors = res.data.map(rgb => `#${rgbHex(rgb[0], rgb[1], rgb[2])}`)
+        setBackground("linear-gradient( -45deg, " + colors.join(",") + ")");
+        setIsLoading(false)
+      });
     }
   };
   return (
@@ -20,7 +24,6 @@ function UserInput() {
         onChange={(e) => setSearchWord(e.target.value)}
         onKeyDown={(e) => submitValue(e)}
       />
-      {/* <button className = "Submit" onClick={submitValue}>Submit</button> */}
     </div>
   );
 }

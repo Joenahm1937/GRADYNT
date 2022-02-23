@@ -9,7 +9,7 @@
 
 .App {
   text-align: center;
-  background: black;
+  /* background: black; */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -70,4 +70,11 @@ textarea {
   100% {
     background-position: 0% 50%;
   }
+}
+
+
+.loading {
+  width: 10vw;
+  margin-top: 8vh;
+  align-self: center;
 }
