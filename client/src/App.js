@@ -11,11 +11,11 @@ function App() {
     <div className="App" style={{ background }}>
       <Header></Header>
       <UserInput setBackground={setBackground} setIsLoading={setIsLoading}></UserInput>
-      {isLoading ? (
-        <div className="loading">
-          <LinearProgress />
-        </div>
-      ) : null}
+      <div className="loading">
+        {isLoading ? (
+            <LinearProgress />
+        ) : null}
+      </div>
     </div>
   );
 }
