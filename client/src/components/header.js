@@ -3,7 +3,7 @@ import React from 'react';
 function Header(){
     return (
         <div className = "Header">
-            <h1>GRADYENT</h1>
+            <h1>GRADYNT</h1>
         </div>
     );
 }

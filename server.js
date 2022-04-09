@@ -44,13 +44,15 @@ const Twitter = new Twit({
 });
 
 // Setting up a user stream, filters tweets by only mentions
-const stream = Twitter.stream("statuses/filter", { track: "@gradyentapp" });
+const stream = Twitter.stream("statuses/filter", { track: "@gradyntapp" });
 
 //NEED TO FIX BUG, NOT CONSOLE LOGGING
 stream.on("tweet", async (tweet) => {
-  let { text, user } = tweet;
+  //id_str to get conversation thread
+  let { text, user , id_str} = tweet;
   let username = user.screen_name;
-  text = text.replace(/@gradyentapp/g, "").replace(/\n/g, "");
+
+  text = text.replace(/@gradyntapp/g, "").replace(/\n/g, "");
   try {
     const [palette, newPage] = await getColors(text, browser, page);
     page = newPage;
@@ -99,6 +101,7 @@ stream.on("tweet", async (tweet) => {
               // now we can reference the media and post a tweet (media will attach to the tweet)
               var params = {
                 status: `@${username} `,
+                in_reply_to_status_id: id_str,
                 media_ids: [mediaIdStr],
               };
 
