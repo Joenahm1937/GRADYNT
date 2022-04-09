@@ -31,7 +31,7 @@ app.post("/api/palette", async (req, res) => {
 //TWITTER
 
 //read info from txt file
-const k = fs.readFileSync("twitter-bot/keys.txt", "utf-8").split("\n");
+const k = fs.readFileSync("keys.txt", "utf-8").split("\n");
 
 //create new twitter object
 const Twitter = new Twit({
@@ -114,10 +114,5 @@ stream.on("tweet", async (tweet) => {
     console.error(err.message);
   }
 });
-
-//post example
-// Twitter.post('statuses/update', { status: 'I have awakened.' }, function(err, data, response) {
-//   err ? console.error(err) : console.log(data);
-// })
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
