@@ -2,6 +2,7 @@ import Header from "./components/header.js";
 import "./App.css";
 import { useState } from "react";
 import UserInput from "./components/userInput.js";
+import SocialMedia from "./components/socialmedia.js";
 import LinearProgress from "@mui/material/LinearProgress";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <LinearProgress />
         ) : null}
       </div>
+      <SocialMedia></SocialMedia>
     </div>
   );
 }
