@@ -1,7 +1,7 @@
 const Twit = require('twit');
 const fs = require('fs');
 
-//read info from txt file
+//read keys from txt file
 const k = fs.readFileSync('twitter-bot/keys.txt', 'utf-8').split("\n")
 
 //create new twitter object
