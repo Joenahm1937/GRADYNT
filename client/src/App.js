@@ -10,7 +10,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 function App() {
   const [background, setBackground] = useState("black");
   const [isLoading, setIsLoading] = useState(false);
-  const [colors, setColors] = useState('#000001#000002#000003#000004#000005');
+  const [colors, setColors] = useState('#000000#000000#000000#000000#000000');
 
   let header = useRef(null);
   let searchBar = useRef(null);
