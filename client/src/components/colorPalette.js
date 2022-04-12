@@ -12,11 +12,7 @@ function ColorPalette(props){
     //         <Circle r={15} fill={{color: '#' + colorArr[5]}} stroke={{color:'#fff'}} strokeWidth={2} />
     //     </div>
     // );
-    return (
-        <div>
-            hello
-        </div>
-    )
+    return null;
 }
 
 export default ColorPalette;

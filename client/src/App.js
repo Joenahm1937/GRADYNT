@@ -69,9 +69,12 @@ function App() {
         <UserInput setBackground={setBackground} setIsLoading={setIsLoading} setColors = {setColors}></UserInput>
       </div>
       <div className="loading" ref = {el => {palette = el} } >
+        {/* {isLoading ? (
+            <CircularProgress/>
+        ) : <ColorPalette colors = {colors}/>} */}
         {isLoading ? (
             <CircularProgress/>
-        ) : <ColorPalette colors = {colors}/>}
+        ) : null}
       </div>
       <div ref = {el => {twitter= el} }>
         <SocialMedia></SocialMedia>
