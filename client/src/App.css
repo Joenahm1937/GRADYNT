@@ -15,10 +15,10 @@
   flex-direction: column;
   justify-content: center;
   color: white;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .Header {
-  font-family: "Josefin Sans", sans-serif;
   font-size: 3vw;
   margin: 20px;
   letter-spacing: 2vw;
@@ -91,4 +91,8 @@ textarea {
   height: 25px;
   border-radius: 50%;
   border: 3px solid white;
+}
+
+.Credits{
+  margin: 30px;
 }

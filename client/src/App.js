@@ -1,10 +1,11 @@
 import Header from "./components/header.js";
 import "./App.css";
 import { useState, useRef, useEffect } from "react";
-import {gsap, Power3} from 'gsap';
+import {gsap, Power3, Power2} from 'gsap';
 import UserInput from "./components/userInput.js";
 import ColorPalette from "./components/colorPalette.js"
 import SocialMedia from "./components/socialmedia.js";
+import Credits from "./components/credits.js";
 import CircularProgress from "@mui/material/CircularProgress";
 
 function App() {
@@ -24,8 +25,8 @@ function App() {
         {
             opacity: 0,
             y: -20,
-            ease: Power3.easeOut,
-            delay: 1.7,
+            ease: Power2.easeOut,
+            delay: 2.0,
         }
     )
     gsap.from(
@@ -35,7 +36,7 @@ function App() {
             opacity: 0,
             y: 0,
             ease: Power3.easeOut,
-            delay: 2.0,
+            delay: 2.6,
         }
     )
     gsap.from(
@@ -45,7 +46,7 @@ function App() {
             opacity: 0,
             y: 20,
             ease: Power3.easeOut,
-            delay: 2.3,
+            delay: 2.9,
         }
     )
   }, [])
@@ -66,6 +67,7 @@ function App() {
       <div ref = {el => {twitter= el} }>
         <SocialMedia></SocialMedia>
       </div>
+      {/* <Credits></Credits> */}
     </div>
   );
 }
