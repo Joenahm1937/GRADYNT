@@ -15,7 +15,7 @@ function App() {
   let header = useRef(null);
   let searchBar = useRef(null);
   let twitter = useRef(null);
-  let palette = useRef(null);
+  // let palette = useRef(null);
 
   useEffect(()=>{
     gsap.from(
@@ -25,18 +25,8 @@ function App() {
             opacity: 0,
             y: -20,
             ease: Power3.easeOut,
-            delay: 0.5,
+            delay: 1.7,
         }
-    )
-    gsap.from(
-      palette,
-      .8,
-      {
-          opacity: 0,
-          y: 0,
-          ease: Power3.easeOut,
-          delay: 1.5,
-      }
     )
     gsap.from(
         searchBar,
@@ -45,7 +35,7 @@ function App() {
             opacity: 0,
             y: 0,
             ease: Power3.easeOut,
-            delay: 0.7,
+            delay: 2.0,
         }
     )
     gsap.from(
@@ -55,7 +45,7 @@ function App() {
             opacity: 0,
             y: 20,
             ease: Power3.easeOut,
-            delay: 1.1,
+            delay: 2.3,
         }
     )
   }, [])
@@ -68,13 +58,10 @@ function App() {
       <div ref = {el => {searchBar= el} }>
         <UserInput setBackground={setBackground} setIsLoading={setIsLoading} setColors = {setColors}></UserInput>
       </div>
-      <div className="loading" ref = {el => {palette = el} } >
-        {/* {isLoading ? (
-            <CircularProgress/>
-        ) : <ColorPalette colors = {colors}/>} */}
+      <div className="loading" >
         {isLoading ? (
             <CircularProgress/>
-        ) : null}
+        ) : <ColorPalette colors = {colors}/>}
       </div>
       <div ref = {el => {twitter= el} }>
         <SocialMedia></SocialMedia>

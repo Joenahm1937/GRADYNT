@@ -19,26 +19,11 @@
 
 .Header {
   font-family: "Josefin Sans", sans-serif;
-  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-  /* background: white; */
-  /* animation: gradient 10s ease infinite; */
-  /* background-size: 200% 200%; */
-  /* -webkit-background-clip: text; */
-  /* background-clip: text; */
-  /* opacity: 0.9; */
   font-size: 3vw;
   margin: 20px;
   letter-spacing: 2vw;
 }
 
-/* .TextField{
-  color: white;
-  background-color: none;
-  box-sizing: border-box;
-  border: 1px white;
-  border-radius: 25px;
-  padding: 12px 20px;
-} */
 
 input[type="text"],
 textarea {
@@ -84,9 +69,26 @@ textarea {
   opacity: 0.2;
   cursor: pointer;
   transition: ease-out 0.15s;
+  width: 50px;
+  margin: auto;
 }
 
 .SocialMedia:hover{
   opacity: 0.9;
   transition: ease 0.2s;
+}
+
+.ColorPalette {
+  width: 180px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.Circle{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 3px solid white;
 }
