@@ -19,7 +19,7 @@
 }
 
 .Header {
-  font-size: 3vw;
+  font-size:calc(10px + 3vw);
   margin: 20px;
   letter-spacing: 2vw;
 }
