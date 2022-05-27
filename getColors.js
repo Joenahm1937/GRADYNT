@@ -7,7 +7,6 @@ var getColors = async (input, browser, page) => {
   var createPixelArray = (pxBuffer, pixelCount, quality) => {
     const pixels = pxBuffer;
     const pixelArray = [];
-    //r=red, g=green, b=blue, o=opacity
     for (let i = 0, offset, r, g, b, a; i < pixelCount; i += quality) {
       offset = i * 4;
       r = pixels[offset];
