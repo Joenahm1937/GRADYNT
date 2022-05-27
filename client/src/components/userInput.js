@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import rgbHex from 'rgb-hex';
 
-function UserInput({ setBackground, setIsLoading }) {
+function UserInput({ setBackground, setIsLoading, setColors }) {
   const [searchWord, setSearchWord] = useState("");
   const submitValue = (event) => {
     if (event.keyCode === 13) {
@@ -11,6 +11,7 @@ function UserInput({ setBackground, setIsLoading }) {
       axios.post("/api/palette", { searchDetails }).then((res) => {
         const colors = res.data.map(rgb => `#${rgbHex(rgb[0], rgb[1], rgb[2])}`)
         setBackground("linear-gradient( -45deg, " + colors.join(",") + ")");
+        setColors(colors.join(""));
         setIsLoading(false)
       });
     }
