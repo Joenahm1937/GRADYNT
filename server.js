@@ -1,5 +1,6 @@
 const express = require("express");
 const getColors = require("./getColors");
+const path = require("path");
 const Twit = require("twit");
 const fs = require("fs");
 const { createCanvas } = require("canvas");
@@ -16,6 +17,11 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'client', 'build')));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
 
 app.post("/api/palette", async (req, res) => {
   const { searchDetails } = req.body;
