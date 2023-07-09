@@ -1,7 +1,6 @@
 // const puppeteer = require("puppeteer");
 const getPixels = require("get-pixels");
 const quantize = require("quantize");
-const { performance } = require("perf_hooks");
 
 var getColors = async (input, browser, page) => {
   var createPixelArray = (pxBuffer, pixelCount, quality) => {
