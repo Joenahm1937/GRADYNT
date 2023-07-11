@@ -4,9 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "client": "cd ../client && npm run start",
-        "server": "node server.js",
-        "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+        "dev": "nodemon server.js",
+        "start": "node server.js"
     },
     "keywords": [],
     "author": "",
