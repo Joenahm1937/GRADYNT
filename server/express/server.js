@@ -4,7 +4,6 @@ import { startTwitterService } from '../scripts/twitter.js';
 import puppeteer from 'puppeteer';
 import {
     SERVER_PORT,
-    CLIENT_BUILD_PATH,
     INDEX_PATH
 } from '../constants.js';
 
@@ -18,7 +17,6 @@ let browser, page;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(CLIENT_BUILD_PATH));
 
 app.get('/', (_, res) => {
     res.sendFile(INDEX_PATH);
