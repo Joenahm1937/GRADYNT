@@ -1,18 +1,16 @@
 import { gsap, Power3 } from 'gsap';
 import { useRef, useEffect } from "react";
-
-// Animation settings
-const ANIMATIONS = [
-    { opacity: 0, x: 100, ease: Power3.easeOut, delay: 0.2 },
-    { opacity: 0, x: 80, ease: Power3.easeOut, delay: 0.5 },
-    { opacity: 0, x: 60, ease: Power3.easeOut, delay: 0.8 },
-    { opacity: 0, x: 40, ease: Power3.easeOut, delay: 1.1 },
-    { opacity: 0, x: 20, ease: Power3.easeOut, delay: 1.4 },
-];
+import { ANIMATIONS } from '../constants';
 
 const ColorPalette = ({ colors }) => {
     const colorArr = colors.split('#');
-    const colorRefs = Array(5).fill(0).map(() => useRef(null));
+    const colorRef1 = useRef(null);
+    const colorRef2 = useRef(null);
+    const colorRef3 = useRef(null);
+    const colorRef4 = useRef(null);
+    const colorRef5 = useRef(null);
+    
+    const colorRefs = [colorRef1, colorRef2, colorRef3, colorRef4, colorRef5];
 
     useEffect(() => {
         colorRefs.forEach((ref, i) => {
@@ -23,7 +21,7 @@ const ColorPalette = ({ colors }) => {
     return (
         <div className="ColorPalette">
             {colorRefs.map((ref, i) => (
-                <div ref={ref} className="Circle" style={{ background: '#' + colorArr[i + 1] }}></div>
+                <div ref={ref} key={i} className="Circle" style={{ background: '#' + colorArr[i + 1] }}></div>
             ))}
         </div>
     );

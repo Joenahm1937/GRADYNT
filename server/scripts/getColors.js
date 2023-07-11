@@ -1,6 +1,6 @@
 import getPixels from "get-pixels";
 import quantize from "quantize";
-import { COLOR_THRESHOLD, DEFAULT_COLOR_COUNT, DEFAULT_QUALITY, IMAGES_LINK_XPATH, IMAGE_SELECTOR, MAX_IMAGES, OPACITY_THRESHOLD } from "../constants";
+import { COLOR_THRESHOLD, DEFAULT_COLOR_COUNT, DEFAULT_QUALITY, IMAGES_LINK_XPATH, OPACITY_THRESHOLD } from "../constants.js";
 
 const createPixelArray = (pixels, pixelCount, quality) => {
     const pixelArray = [];
@@ -60,10 +60,10 @@ const scrapeGoogleImages = async (searched, browser, page) => {
     await page.waitForNavigation({ waitUntil: "domcontentloaded" });
 
     const images = await page.evaluate(() =>
-        Array.from(document.querySelectorAll(IMAGE_SELECTOR)).slice(0, MAX_IMAGES).map((i) => i.src)
+        Array.from(document.querySelectorAll("img.rg_i")).slice(0, 5).map((i) => i.src)
     );
 
-    return [images.slice(0, MAX_IMAGES), page];
+    return [images.slice(0, 5), page];
 };
 
 export const getColors = async (input, browser, page) => {

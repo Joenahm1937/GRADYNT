@@ -1,8 +1,7 @@
 import Twit from 'twit';
 import fs from 'fs';
-import { join } from 'path';
-import { getColors } from '../scripts/getColors';
-import { createCanvas } from 'canvas';
+import { getColors } from '../scripts/getColors.js';
+import * as createCanvas from 'canvas';
 import {
     KEYS_FILE_PATH,
     RESPONSE_PNG_PATH,
@@ -10,7 +9,7 @@ import {
     TWIT_TRACKING_MENTION,
     CANVAS_WIDTH,
     CANVAS_HEIGHT
-} from '../constants';
+} from '../constants.js';
 
 export const startTwitterService = async (browser, page) => {
     let key;

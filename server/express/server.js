@@ -1,12 +1,12 @@
 import express from 'express';
-import { getColors } from '../scripts/getColors';
-import { startTwitterService } from './twitterService';
+import { getColors } from '../scripts/getColors.js';
+import { startTwitterService } from '../scripts/twitter.js';
 import puppeteer from 'puppeteer';
 import {
     SERVER_PORT,
     CLIENT_BUILD_PATH,
     INDEX_PATH
-} from '../constants';
+} from '../constants.js';
 
 const app = express();
 
