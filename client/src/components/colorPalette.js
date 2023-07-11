@@ -1,77 +1,30 @@
-import React from 'react';
-import {gsap, Power3} from 'gsap';
+import { gsap, Power3 } from 'gsap';
 import { useRef, useEffect } from "react";
 
-function ColorPalette(props){
-    const colorArr = props.colors.split('#');
+// Animation settings
+const ANIMATIONS = [
+    { opacity: 0, x: 100, ease: Power3.easeOut, delay: 0.2 },
+    { opacity: 0, x: 80, ease: Power3.easeOut, delay: 0.5 },
+    { opacity: 0, x: 60, ease: Power3.easeOut, delay: 0.8 },
+    { opacity: 0, x: 40, ease: Power3.easeOut, delay: 1.1 },
+    { opacity: 0, x: 20, ease: Power3.easeOut, delay: 1.4 },
+];
 
-    let color1 = useRef(null);
-    let color2 = useRef(null);
-    let color3 = useRef(null);
-    let color4 = useRef(null);
-    let color5 = useRef(null);
-  
-    useEffect(()=>{
-      gsap.from(
-          color1,
-          .8,
-          {
-              opacity: 0,
-              x: 100,
-              ease: Power3.easeOut,
-              delay: 0.2,
-          }
-      )
-      gsap.from(
-        color2,
-        .8,
-        {
-            opacity: 0,
-            x: 80,
-            ease: Power3.easeOut,
-            delay: 0.5,
-        }
-    )
-    gsap.from(
-        color3,
-        .8,
-        {
-            opacity: 0,
-            x: 60,
-            ease: Power3.easeOut,
-            delay: 0.8,
-        }
-    )
-    gsap.from(
-        color4,
-        .8,
-        {
-            opacity: 0,
-            x: 40,
-            ease: Power3.easeOut,
-            delay: 1.1,
-        }
-    )
-    gsap.from(
-        color5,
-        .8,
-        {
-            opacity: 0,
-            x: 20,
-            ease: Power3.easeOut,
-            delay: 1.4,
-        }
-    )
-    }, [])
+const ColorPalette = ({ colors }) => {
+    const colorArr = colors.split('#');
+    const colorRefs = Array(5).fill(0).map(() => useRef(null));
 
+    useEffect(() => {
+        colorRefs.forEach((ref, i) => {
+            gsap.from(ref.current, 0.8, ANIMATIONS[i]);
+        });
+    }, []);
 
     return (
-        <div className = "ColorPalette">
-            <div ref = {el => {color1= el} } className = "Circle" style = {{background: '#' + colorArr[1]}}></div>
-            <div ref = {el => {color2= el} } className = "Circle" style = {{background: '#' + colorArr[2]}}></div>
-            <div ref = {el => {color3= el} } className = "Circle" style = {{background: '#' + colorArr[3]}}></div>
-            <div ref = {el => {color4= el} } className = "Circle" style = {{background: '#' + colorArr[4]}}></div>
-            <div ref = {el => {color5= el} } className = "Circle" style = {{background: '#' + colorArr[5]}}></div>
+        <div className="ColorPalette">
+            {colorRefs.map((ref, i) => (
+                <div ref={ref} className="Circle" style={{ background: '#' + colorArr[i + 1] }}></div>
+            ))}
         </div>
     );
 }

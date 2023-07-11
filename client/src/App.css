@@ -1,98 +1,95 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Josefin+Sans:wght@100&family=Lato:ital,wght@1,100&family=Quicksand&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
 }
 
 .App {
-  text-align: center;
-  /* background: black; */
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: white;
-  font-family: "Josefin Sans", sans-serif;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .Header {
-  font-size:calc(10px + 3vw);
-  margin: 20px;
-  letter-spacing: 2vw;
+    font-size: calc(10px + 3vw);
+    margin: 20px;
+    letter-spacing: 2vw;
 }
-
 
 input[type="text"],
 textarea {
-  background-color: rgb(255, 255, 255, 0.2);
-  color: white;
-  background-color: none;
-  box-sizing: border-box;
-  border: 1px white;
-  border-radius: 25px;
-  padding: 12px 20px;
+    background-color: rgb(255, 255, 255, 0.2);
+    color: white;
+    background-color: none;
+    box-sizing: border-box;
+    border: 1px white;
+    border-radius: 25px;
+    padding: 12px 20px;
 }
 ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgb(255, 255, 255, 0.2);
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(255, 255, 255, 0.2);
 }
 
 @keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 50% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .loading {
-  width: 180px;
-  height: 100px;
-  align-self: center;
-  margin: 5vh;
+    width: 180px;
+    height: 100px;
+    align-self: center;
+    margin: 5vh;
 }
 
-.SocialMedia{
-  opacity: 0.2;
-  cursor: pointer;
-  transition: ease-out 0.15s;
-  width: 50px;
-  margin: auto;
+.SocialMedia {
+    opacity: 0.2;
+    cursor: pointer;
+    transition: ease-out 0.15s;
+    width: 50px;
+    margin: auto;
 }
 
-.SocialMedia:hover{
-  opacity: 0.9;
-  transition: ease 0.2s;
+.SocialMedia:hover {
+    opacity: 0.9;
+    transition: ease 0.2s;
 }
 
 .ColorPalette {
-  width: 180px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
-.Circle{
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  border: 3px solid white;
+.Circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 3px solid white;
 }
 
-.Credits{
-  margin: 30px;
+.Credits {
+    margin: 30px;
 }

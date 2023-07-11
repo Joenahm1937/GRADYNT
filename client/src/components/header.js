@@ -1,9 +1,6 @@
-// import React , {useRef, useEffect} from 'react';
-import React from 'react';
-
-function Header(){
+const Header = () => {
     return (
-        <div className = "Header">
+        <div className="Header">
             <h1>GRADYNT</h1>
         </div>
     );

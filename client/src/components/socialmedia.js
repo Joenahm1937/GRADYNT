@@ -1,10 +1,10 @@
-import React from 'react';
 import { SocialIcon } from 'react-social-icons';
+import { TWITTER_LINK } from '../constants'
 
-function SocialMedia(){
+const SocialMedia = () => {
     return (
-        <div className = "SocialMedia">
-            <SocialIcon url= 'https://twitter.com/gradyntapp' bgColor = "#fff"/>
+        <div className="SocialMedia">
+            <SocialIcon url={TWITTER_LINK} bgColor="#fff" />
         </div>
     );
 }
