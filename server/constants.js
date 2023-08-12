@@ -16,7 +16,5 @@ export const CANVAS_WIDTH = 100;
 export const CANVAS_HEIGHT = 50;
 
 // Server Constants
-const DEFAULT_PORT = 5000;
-export const SERVER_PORT = process.env.PORT || DEFAULT_PORT;
-export const CLIENT_BUILD_PATH = "client/build";
-export const INDEX_PATH = join(CLIENT_BUILD_PATH, 'index.html');
+const HTTPS_PORT = 443;
+export const SERVER_PORT = process.env.PORT || HTTPS_PORT;

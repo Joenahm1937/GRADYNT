@@ -18,8 +18,16 @@ let browser, page;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Middleware for CORS headers
+app.use((_, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://d1jqm5g5neadez.cloudfront.net/');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
+
 app.get('/', (_, res) => {
-    res.sendFile(INDEX_PATH);
+    res.send("Welcome to Gradynt's Server!");
 });
 
 app.post("/api/palette", async (req, res) => {
