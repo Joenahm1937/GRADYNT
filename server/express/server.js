@@ -1,6 +1,6 @@
 import express from 'express';
 import { getColors } from '../scripts/getColors.js';
-import { startTwitterService } from '../scripts/twitter.js';
+// import { startTwitterService } from '../scripts/twitter.js';
 import puppeteer from 'puppeteer';
 import {
     SERVER_PORT,
@@ -34,6 +34,6 @@ app.post("/api/palette", async (req, res) => {
 });
 
 //Start the Twitter service
-startTwitterService(browser, page);
+// startTwitterService(browser, page);
 
 app.listen(SERVER_PORT, () => console.log(`Listening on port ${SERVER_PORT}`));

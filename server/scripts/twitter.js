@@ -3,28 +3,22 @@ import fs from 'fs';
 import { getColors } from '../scripts/getColors.js';
 import * as createCanvas from 'canvas';
 import {
-    KEYS_FILE_PATH,
     RESPONSE_PNG_PATH,
     TWIT_HTTP_REQ_TIMEOUT,
     TWIT_TRACKING_MENTION,
     CANVAS_WIDTH,
     CANVAS_HEIGHT
 } from '../constants.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export const startTwitterService = async (browser, page) => {
-    let key;
-    try {
-        key = fs.readFileSync(KEYS_FILE_PATH, "utf-8").split("\n");
-    } catch (err) {
-        console.error("Error reading twitter keys");
-        return;
-    }
-
     const Twitter = new Twit({
-        consumer_key: key[0],
-        consumer_secret: key[1],
-        access_token: key[2],
-        access_token_secret: key[3],
+        consumer_key: process.env.CONSUMER_KEY,
+        consumer_secret: process.env.CONSUMER_SECRET,
+        access_token: process.env.ACCESS_TOKEN,
+        access_token_secret: process.env.ACCESS_TOKEN_SECRET,
         timeout_ms: TWIT_HTTP_REQ_TIMEOUT,
         strictSSL: true,
     });
